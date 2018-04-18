@@ -1,0 +1,33 @@
+.about {
+    padding-top: convertPixels(180, 768, 1vh);
+    padding-bottom: convertPixels(80, 768, 1vh);
+    background: $darkblue;
+    color: #fff;
+    @include e(header) {
+        margin: {
+            top: convertREM(66);
+            bottom: convertREM(40);
+        }
+        @include font-size(66);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    @include e(desc) {
+        @include font-size(20);
+        color: #fff;
+        p {
+            margin: {
+                top: 1rem;
+                bottom: 1rem;
+            }
+        }
+    }
+    @include e(image) {
+        padding-top: 5vh;
+        height: auto;
+        max-width: 100%;
+        @include responsive('tablet-wide', max) {
+            max-height: 400px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.stats {
+    @include main-section();
+    padding: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+    min-height: 200px;
+    background: $lightblue;
+}

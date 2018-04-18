@@ -1,0 +1,212 @@
+.nav {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    color: #fff;
+    z-index: 50;
+    transition: 300ms;
+    .container {
+        height: 100%;
+        .row {
+            height: 100%
+        }
+    }
+    @include e(logo) {
+        height: 100px;
+        width: auto;
+        transition: height 300ms;
+    }
+    @include m(scroll) {
+        @extend .nav;
+        height: 80px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        background: #fff;
+        color: $black;
+        .nav__logo {
+            height: 80px;
+        }
+        .nav__link {
+            color: $black;
+            &::after {
+                background: $blue;
+            }
+        }
+    }
+    @include m(footer) {
+        @include main-section();
+        min-height: convertPixels(250, 768, 1vh);
+        .nav__header {
+            margin-bottom: 1.5rem;
+            @include font-size(30);
+        }
+        .nav__links {
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            li {
+                height: auto;
+                display: block;
+            }
+        }
+        .nav__link {
+            margin-bottom: 1rem;
+            color: $dirtwhite;
+            font-weight: 400;
+            @include font-size(18);
+            &:hover,
+            &.active {
+                visibility: visible;
+                transform: scaleX(1);
+                color: lighten($dirtwhite, 10%)
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 50%;
+                height: 2px;
+                left: 0;
+                bottom: -2px;
+                background-color: #fff;
+                visibility: hidden;
+                transform: scaleX(0);
+                transform-origin: top left;
+                transition: all 0.3s ease-in-out 0s;
+            }
+        }
+    }
+    @include e('links') {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+    @include e('link') {
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        font-weight: 500;
+        @include font-size(20);
+        position: relative;
+        transition: 0.3s;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            bottom: -2px;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+        }
+        &.active {
+            font-weight: 600;
+            &::after {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+        }
+        &:hover {
+            &::after {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+// HAMBURGER
+@include responsive('tablet-wide', max) {
+    .nav {
+        position: fixed;
+        height: 80px;
+        width: 100%;
+        color: #fff;
+        z-index: 50;
+        transition: 300ms;
+        .container {
+            height: 100%;
+            .row {
+                height: 100%
+            }
+        }
+        @include e(logo) {
+            display: none;
+        }
+        @include m(scroll) {
+            position: fixed;
+            height: 80px;
+            width: 100%;
+            color: #fff;
+            z-index: 50;
+            transition: 300ms;
+            height: 60px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            background: #fff;
+            color: $black;
+            .container {
+                height: 100%;
+                .row {
+                    height: 100%
+                }
+            }
+            .nav__links {
+                li {
+                    height: 60px;
+                }
+            }
+            .nav__link {
+                color: $black;
+                &::after {
+                    background: $blue;
+                }
+            }
+        }
+        @include e('links') {
+            display: flex;
+            //flex-direction: column;
+            justify-content: space-around;
+            list-style-type: none;
+            width: 100%;
+            height: auto;
+            li {
+                @include centerFlex();
+                width: 100%;
+                height: 80px;
+            }
+        }
+        @include e('link') {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            @include font-size(20);
+            position: relative;
+            transition: 0.3s;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                bottom: -2px;
+                background-color: #fff;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all 0.3s ease-in-out 0s;
+            }
+            &.active {
+                font-weight: 600;
+                &::after {
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+            }
+            &:hover {
+                &::after {
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}

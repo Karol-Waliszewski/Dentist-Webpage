@@ -1,0 +1,21 @@
+.reset {
+  padding: 0;
+}
+
+.gallery {
+  @include e(image) {
+    min-height: $row--half-Height/2;
+    background: url("") scroll no-repeat center center;
+    background-color: inherit;
+    background-position: center;
+    background-size: cover;
+    @include responsive('desktop', min) {
+      background-size: 130%;
+      transition: all 300ms;
+
+      &:hover {
+        background-size: 145%;
+      }
+    }
+  }
+}

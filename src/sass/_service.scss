@@ -1,0 +1,15 @@
+.service {
+    align-items: center;
+    margin: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+    @include e(icon) {
+        height: 100px;
+        width: 100px;
+    }
+    @include e(name) {
+        @include font-size(26);
+        color: $gray;
+    }
+}

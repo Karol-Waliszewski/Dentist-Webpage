@@ -1,0 +1,27 @@
+.services {
+    min-height: convertPixels(750, 768, 1vh);
+    @include main-section();
+    @include e(header) {
+        position: relative;
+        @include font-size(56);
+        height: auto;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        margin: {
+            top: convertREM(66);
+            bottom: convertREM(50);
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 25%;
+            height: 2px;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $blue;
+        }
+    }
+}

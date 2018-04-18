@@ -1,0 +1,47 @@
+.information {
+  @include centerFlex();
+  align-items: flex-start;
+  height: 100%;
+  padding: {
+    top: convertPixels(40, 768, 1vh);
+    left: convertPixels(100, 1366, 1vw);
+    right: convertPixels(100, 1366, 1vw);
+  }
+  @include e(header) {
+    @include font-size(44);
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 2px;
+      margin: {
+        top: convertPixels(50, 768, 1vh);
+        bottom: convertPixels(50, 768, 1vh);
+      }
+      background: $blue;
+    }
+  }
+  @include e(description) {
+    line-height: 1.25;
+    margin-bottom: convertPixels(40, 768, 1vh);
+    @include font-size(18);
+    font-weight: 300;
+    color: darken($gray, 20%);
+  }
+  @include e(image) {
+    min-height: $row--half-Height/2;
+    background: url("") scroll no-repeat center center;
+    background-color: inherit;
+    background-position: center;
+    background-size: cover;
+    @include responsive('desktop', min) {
+      background-size: 130%;
+      transition: all 300ms;
+      &:hover {
+        background-size: 145%;
+      }
+    }
+  }
+}

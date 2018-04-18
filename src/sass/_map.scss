@@ -1,0 +1,21 @@
+.map {
+    display: block;
+    height: convertPixels(675, 768, 1vh);
+    width: 100%;
+    background: #51d5d8;
+    @include m(big) {
+        @extend .map;
+        height: convertPixels(850, 768, 1vh);
+    }
+    @include e(header) {
+        @include font-size(34);
+        font-weight: 500;
+        @include m(above) {
+            @include font-size(18);
+            font-weight: 400;
+        }
+    }
+    @include e(address) {
+        @include font-size(18);
+    }
+}

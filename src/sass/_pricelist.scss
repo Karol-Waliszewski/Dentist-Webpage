@@ -1,0 +1,87 @@
+$rowHeight: 40px;
+main {
+    position: relative;
+}
+
+.pricelist {
+    margin: {
+        top: 2rem;
+        bottom: 2rem;
+    }
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    @include responsive ('tablet-wide', max) {
+        width: 100%
+    }
+    @include m(absolute) {
+        position: absolute;
+        top: -1*$rowHeight*4;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @include e(row) {
+        min-height: $rowHeight;
+        margin: {
+            left: 0 !important;
+            right: 0 !important;
+        }
+        @include m(header) {
+            @extend .pricelist__row;
+            min-height: 1.4 * $rowHeight;
+            background: $blue;
+            margin-right: -1px !important;
+            &::before {
+                content: '';
+                height: 100%;
+                width: 6px;
+                background: $darkblue;
+            }
+        }
+        @include m(odd) {
+            @extend .pricelist__row;
+            background: rgba($blue, 0.20);
+            color: darken($darkblue, 5%);
+        }
+        @include m(even) {
+            @extend .pricelist__row;
+            background: #fff;
+            color: $black;
+        }
+    }
+    @include e(service) {
+        min-height: 100%;
+        padding: {
+            top: 0.4rem;
+            bottom: 0.4rem;
+        }
+        display: flex;
+        align-items: center;
+        @include font-size(20);
+        @include m(header) {
+            @extend .pricelist__service;
+            //justify-content: center;
+            @include font-size(26);
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+    @include e(price) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include font-size(24);
+        &::after {
+            content: '\00a0zł';
+        }
+        @include m(header) {
+            @extend .pricelist__price;
+            @include font-size(30);
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #fff;
+            &::after {
+                content: none;
+            }
+        }
+    }
+}

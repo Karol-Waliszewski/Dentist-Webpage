@@ -1,0 +1,44 @@
+.head {
+    min-height: 100vh;
+    @include responsive('tablet', max) {
+        padding: {
+            top: 6rem;
+            bottom: 3rem;
+        }
+    }
+    background: #0098C6;
+    background: linear-gradient(45deg, #0098c6 0%, #2ec0f9 100%);
+    .container {
+        min-height: 100vh;
+        .row {
+            min-height: 100vh;
+        }
+    }
+    @include e(text) {
+        color: #fff;
+    }
+    @include e(logo) {
+        max-height: 50vh;
+        height: auto;
+        max-width: 100%;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    @include e('header') {
+        @include font-size(60);
+        font-weight: 700;
+        text-transform: uppercase;
+        @include m(above) {
+            @include font-size(30);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    @include e('desc') {
+        line-height: 1.25;
+        @include font-size(22);
+        font-weight: 300;
+    }
+}

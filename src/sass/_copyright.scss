@@ -1,0 +1,10 @@
+.copyright {
+    position: relative;
+    min-height: 20px !important;
+    bottom: 0;
+    color: #fff;
+    @include e(link) {
+        color: $lightblue;
+        @include font-size(18);
+    }
+}

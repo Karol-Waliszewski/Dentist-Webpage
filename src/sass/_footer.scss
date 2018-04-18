@@ -1,0 +1,57 @@
+@import 'copyright';
+.footer {
+    position: relative;
+    background: $darkblue;
+    color: $dirtwhite;
+    .container {
+        min-height: convertPixels(400, 768, 1vh);
+        @include main-section();
+    }
+    @include e(logo) {
+        @include responsive('tablet-wide', max) {
+            max-width: 100%;
+        }
+        height: auto;
+    }
+    @include e(header) {
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            @include responsive('tablet-wide', max) {
+                left: 0;
+            }
+            left: 8px;
+            bottom: -1rem;
+            background: #fff;
+        }
+        margin-bottom: 2rem;
+    }
+    @include e(heading) {
+        font-weight: 600;
+        @include font-size(38);
+    }
+    @include e(more) {
+        @include font-size(16);
+        font-weight: 300;
+    }
+    @include e(section) {
+        min-height: convertPixels(250, 768, 1vh);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: {
+            top: 0.7rem;
+            bottom: 0.7rem;
+        }
+        @include responsive('tablet', max) {
+            min-height: 10vh;
+        }
+    }
+    @include e(copy) {
+        min-height: auto;
+    }
+}

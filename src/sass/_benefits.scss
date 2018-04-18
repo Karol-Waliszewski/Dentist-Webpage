@@ -1,0 +1,16 @@
+.benefits {
+    padding: {
+        top: 5vh;
+        bottom: 5vh;
+    }
+    @include responsive('tablet-wide', min) {
+        position: absolute;
+        bottom: -1*convertPixels(180, 768, 1vh);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: {
+            top: 0;
+            bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+// Variables //
+$lightblue:#2EC0F9;
+$blue: #0098C6;
+$darkblue: #03495E;
+$black: #262626;
+$gray: #a5a5a5;
+$dirtwhite: #F0F5F9;
+$row--half-Height: 60vh;
+// --------- //
+@mixin main-section() {
+    display: flex;
+    flex-direction: column;
+}
+
+// --------- //
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'mixins';
+@import 'reset';
+@import 'flexboxgrid';
+@import 'btns';
+@import 'nav';
+@import 'header';
+@import 'footer';
+@import 'contact';
+@import 'information';
+@import 'gallery';
+@import 'fa/font-awesome';
+body {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+.row {
+    @include m(main) {
+        @extend .row;
+        flex: 1;
+    }
+    @include m(half) {
+        @extend .row;
+        min-height: $row--half-Height;
+    }
+    @include m(quarter) {
+        @extend .row;
+        min-height: $row--half-Height*0.8;
+    }
+}
+
+@include responsive('tablet-wide',
+max) {
+    html {
+        font-size: 15px
+    }
+}
+
+@include responsive('phone-wide',
+max) {
+    html {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,16 @@
+.stat {
+    color: #fff;
+    margin: {
+        top: 0.5rem;
+        bottom: 0.5rem;
+    }
+    @include e(number) {
+        @include font-size(70);
+        word-wrap: break-word;
+        font-family: 'Roboto', sans-serif;
+    }
+    @include e(name) {
+        @include font-size(28);
+        font-weight: 700;
+    }
+}

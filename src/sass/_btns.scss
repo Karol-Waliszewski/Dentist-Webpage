@@ -1,0 +1,38 @@
+.btn {
+    height: 55px;
+    width: 180px;
+    margin: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+    background: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 250ms;
+    text-decoration: none;
+    @include font-size(24);
+    @include centerFlex();
+    @include m(small) {
+        @extend .btn;
+        width: 120px;
+        height: 45px;
+        @include font-size(20);
+    }
+    @include m(default) {
+        @extend .btn;
+        background: #fff;
+        color: $lightblue;
+        &:hover {
+            background: darken(#fff, 10%);
+        }
+    }
+    @include m(primary) {
+        @extend .btn;
+        background: $blue;
+        color: #fff;
+        &:hover {
+            background: darken($blue, 10%);
+        }
+    }
+}
