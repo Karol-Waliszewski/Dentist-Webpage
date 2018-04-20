@@ -1,4 +1,0 @@
-responsywne menu mniej wiecej
-dodaæ zdjecia do GABINET
-dodaæ javascript smoothscroll to btn[value='Dalej']
-Header USLUGI DESC dodaæ
