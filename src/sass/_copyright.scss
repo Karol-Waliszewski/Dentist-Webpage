@@ -1,10 +1,23 @@
 .copyright {
-    position: relative;
-    min-height: 20px !important;
-    bottom: 0;
-    color: #fff;
-    @include e(link) {
-        color: $lightblue;
-        @include font-size(18);
+  position: absolute;
+  min-height: 20px !important;
+  width: 100%;
+  bottom: 10px;
+  color: #fff;
+  @include e(link) {
+    color: $lightblue;
+    @include font-size(18);
+    text-decoration: none;
+  }
+  @include e(info) {
+    
+    padding: 0 0.5rem;
+    @include responsive('tablet', min) {
+      padding: 0;
+
+      &:last-child {
+        text-align: right;
+      }
     }
+  }
 }

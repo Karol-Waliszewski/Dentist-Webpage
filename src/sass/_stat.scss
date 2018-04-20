@@ -8,9 +8,12 @@
         @include font-size(70);
         word-wrap: break-word;
         font-family: 'Roboto', sans-serif;
+
     }
     @include e(name) {
-        @include font-size(28);
+        //@include font-size(24);
+        font-size:calc(1rem + 1.1vw);
         font-weight: 700;
+
     }
 }

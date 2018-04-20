@@ -1,57 +1,114 @@
-@import 'copyright';
+// @import 'copyright';
+// .footer {
+//     position: relative;
+//     background: $darkblue;
+//     color: $dirtwhite;
+//     .container {
+//         min-height: convertPixels(400, 768, 1vh);
+//         @include main-section();
+//     }
+//     @include e(logo) {
+//         @include responsive('tablet-wide', max) {
+//             max-width: 100%;
+//         }
+//         height: auto;
+//     }
+//     @include e(header) {
+//         position: relative;
+//         &::after {
+//             content: '';
+//             display: block;
+//             position: absolute;
+//             width: 50%;
+//             height: 2px;
+//             @include responsive('tablet-wide', max) {
+//                 left: 0;
+//             }
+//             left: 8px;
+//             bottom: -1rem;
+//             background: #fff;
+//         }
+//         margin-bottom: 2rem;
+//     }
+//     @include e(heading) {
+//         font-weight: 600;
+//         @include font-size(38);
+//     }
+//     @include e(more) {
+//         @include font-size(16);
+//         font-weight: 300;
+//     }
+//     @include e(section) {
+//         min-height: convertPixels(250, 768, 1vh);
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         margin: {
+//             top: 0.7rem;
+//             bottom: 0.7rem;
+//         }
+//         @include responsive('tablet', max) {
+//             min-height: 10vh;
+//         }
+//     }
+//     @include e(copy) {
+//         min-height: auto;
+//     }
+// }
+
 .footer {
+  position: relative;
+  background: $darkblue;
+  color: $dirtwhite;
+  @include responsive('tablet', max) {
+    padding: 2rem;
+  }
+  .container {
+    min-height: convertPixels(300, 768, 1vh);
     position: relative;
-    background: $darkblue;
+    @include main-section();
+  }
+  @include e(heading) {
+    font-weight: 600;
+    @include font-size(34);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
     color: $dirtwhite;
-    .container {
-        min-height: convertPixels(400, 768, 1vh);
-        @include main-section();
+  }
+  @include e(item) {
+    @include font-size(16);
+    font-weight: 400;
+    margin: 1rem 0;
+    color: darken($dirtwhite,8%);
+  }
+  @include e(link) {
+    @include font-size(16);
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+      margin: 0.5rem 0;
+    font-weight: 400;
+    transition: 150ms;
+
+    &:hover {
+      color: $lightblue;
     }
-    @include e(logo) {
-        @include responsive('tablet-wide', max) {
-            max-width: 100%;
-        }
-        height: auto;
+
+    &.active {
+      color: $lightblue;
     }
-    @include e(header) {
-        position: relative;
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 50%;
-            height: 2px;
-            @include responsive('tablet-wide', max) {
-                left: 0;
-            }
-            left: 8px;
-            bottom: -1rem;
-            background: #fff;
-        }
-        margin-bottom: 2rem;
+  }
+  @include e(section) {
+    min-height: convertPixels(150, 768, 1vh);
+    @include responsive('tablet', max) {
+      min-height: 10vh;
+      margin: {
+        top: 0.7rem;
+        bottom: 0.7rem;
+      }
+      &:last-child {
+        margin-bottom: 6rem;
+      }
     }
-    @include e(heading) {
-        font-weight: 600;
-        @include font-size(38);
-    }
-    @include e(more) {
-        @include font-size(16);
-        font-weight: 300;
-    }
-    @include e(section) {
-        min-height: convertPixels(250, 768, 1vh);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: {
-            top: 0.7rem;
-            bottom: 0.7rem;
-        }
-        @include responsive('tablet', max) {
-            min-height: 10vh;
-        }
-    }
-    @include e(copy) {
-        min-height: auto;
-    }
+  }
 }

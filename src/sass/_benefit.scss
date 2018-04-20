@@ -30,8 +30,10 @@
     }
     @include e(icon) {
         width: 100%;
-        //height: convertPixels(90, 768, 1vh);
         height: auto;
+        @include responsive('phone-wide', max) {
+            height: 90px;
+        }
     }
     &::after {
         content: '';
