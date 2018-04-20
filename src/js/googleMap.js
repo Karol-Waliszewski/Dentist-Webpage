@@ -89,13 +89,11 @@ var mapModule = (function() {
           position: results[0].geometry.location,
           icon: 'img/map-marker.png',
         });
-        if (document.location.pathname.indexOf('index') > -1) {
           infowindow.open(map, marker);
-          // Adding Listener to Markes
+          // Adding Listener to Marker
           marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
-        }
       } else {
         alert('Geocode nie został załadowany z powodu: ' + status);
       }

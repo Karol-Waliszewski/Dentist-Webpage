@@ -1,6 +1,6 @@
 var navModule = (function () {
 
-    // DOM Cache 
+    // DOM Cache
     var nav = document.querySelector('.nav'),
         logo = document.querySelector('.nav__logo');
 
@@ -15,8 +15,7 @@ var navModule = (function () {
     };
 
     var addScrollClass = function () {
-
-        // Checking if scroll class is already on nav 
+        // Checking if scroll class is already on nav
         if (!nav.classList.contains('nav--scroll')) {
             // Updateing nav classes
             nav.classList.add('nav--scroll');
@@ -25,7 +24,6 @@ var navModule = (function () {
             // Updateing nav classes
             nav.classList.remove('nav');
         }
-
     };
 
     var removeScrollClass = function () {
@@ -37,4 +35,6 @@ var navModule = (function () {
 
     // Event Listeners
     window.addEventListener('scroll', checkScrollPosition);
+
+    checkScrollPosition();
 })();
