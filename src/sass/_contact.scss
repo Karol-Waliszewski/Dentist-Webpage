@@ -1,120 +1,136 @@
 .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @include m(main) {
+    $contactHeight: convertPixels(500, 768, 1vh);
+    min-height: $contactHeight;
     display: flex;
+    background: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: -1*convertPixels((500-170), 768, 1vh);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    @include responsive('tablet', max) {
+      position: static;
+      width: 100%;
+      transform: none;
+
+      .row--main {
+        margin: 0;
+      }
+    }
+
+    hr {
+      height: 3px;
+      width: 270px;
+      background: $darkblue;
+      border: none;
+      margin: {
+        left: 0;
+        top: 18px;
+        bottom: 18px;
+      }
+      @include responsive('phone-wide', max) {
+        margin: {
+          left: auto;
+          right: auto;
+          top: 4vh;
+          bottom: 4vh;
+        }
+      }
+    }
+
+    .contact__details {
+      background: #fff;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      @include responsive('tablet', min) {
+        padding-left: 85px;
+      }
+      @include responsive('phone-wide', max) {
+        padding::{
+          bottom: 5vh;
+        }
+      }
+    }
+
+    .contact__header {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      position: relative;
+      min-height: convertPixels(170, 768, 1vh);
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      @include responsive('tablet', max) {
+        padding: {
+          top: 5vh;
+        }
+      }
+    }
+
+    .contact__title {
+      @include font-size(66);
+      font-weight: 600;
+      @include m(above) {
+        @include font-size(40);
+      }
+      @include responsive('phone-wide', max) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .fa {
+      margin-right: 6px;
+      margin-bottom: 14px;
+    }
+
+    .contact__info {
+      @include font-size(22);
+      text-decoration: none;
+      color: $black;
+      margin: {
+        top: convertREM(11);
+        bottom: convertREM(11);
+      }
+    }
+  }
+  @include m(footer) {
+    height: 100%;
     flex-direction: column;
-    justify-content: space-around;
-    @include m(main) {
-        $contactHeight: convertPixels(500, 768, 1vh);
-        min-height: $contactHeight;
-        display: flex;
-        background: #fff;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        position: absolute;
-        bottom: -1*convertPixels((500-170), 768, 1vh);
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-        @include responsive('tablet', max) {
-            position: static;
-            width: 100%;
-            transform: none;
-            .row--main {
-                margin: 0;
-            }
-        }
-        hr {
-            height: 3px;
-            width: 270px;
-            background: $darkblue;
-            border: none;
-            margin: {
-                left: 0;
-                top: 18px;
-                bottom: 18px;
-            }
-        }
-        .contact__details {
-            background: #fff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-            @include responsive('tablet', min) {
-                padding-left: 85px;
-            }
-        }
-        .contact__header {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-            position: relative;
-            min-height: convertPixels(170, 768, 1vh);
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            @include responsive('tablet', max) {
-                padding: {
-                    top: 20px;
-                    bottom: 20px;
-                }
-            }
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: -3px;
-                left: 0;
-                height: 3px;
-                width: 270px;
-                background: $darkblue;
-            }
-        }
-        .contact__title {
-            @include font-size(66);
-            font-weight: 600;
-            @include m(above) {
-                @include font-size(40);
-            }
-        }
-        .fa {
-            margin-right: 6px;
-            margin-bottom: 14px;
-        }
-        .contact__info {
-            @include font-size(22);
-            text-decoration: none;
-            color: $black;
-            margin: {
-                top: convertREM(11);
-                bottom: convertREM(11);
-            }
-        }
+    justify-content: space-between;
+
+    .contact__header {
+      @include m(primary) {
+        margin: 0.7rem 0;
+        @include font-size(30);
+      }
+      @include m(secondary) {
+        margin: 0.5rem 0;
+        @include font-size(24);
+      }
     }
-    @include m(footer) {
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-between;
-        .contact__header {
-            @include m(primary) {
-                margin: 0.7rem 0;
-                @include font-size(30);
-            }
-            @include m(secondary) {
-                margin: 0.5rem 0;
-                @include font-size(24);
-            }
-        }
-        .fa {
-            // display: inline-flex;
-            color: #fff;
-            margin-right: 5px;
-        }
-        .contact__info {
-            margin: 0.2rem 0;
-            text-decoration: none;
-            @include font-size(20);
-            font-weight: 300;
-            color: lighten($gray, 20%);
-            @include m(inline) {
-                @extend .contact__info;
-                display: inline-flex;
-            }
-        }
+
+    .fa {
+      // display: inline-flex;
+      color: #fff;
+      margin-right: 5px;
     }
+
+    .contact__info {
+      margin: 0.2rem 0;
+      text-decoration: none;
+      @include font-size(20);
+      font-weight: 300;
+      color: lighten($gray, 20%);
+      @include m(inline) {
+        @extend .contact__info;
+        display: inline-flex;
+      }
+    }
+  }
 }

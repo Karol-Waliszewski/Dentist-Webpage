@@ -3,7 +3,8 @@
   background: $darkblue;
   color: $dirtwhite;
   @include responsive('tablet', max) {
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .container {
     min-height: convertPixels(300, 768, 1vh);
@@ -22,6 +23,9 @@
     font-weight: 400;
     margin: 1rem 0;
     color: darken($dirtwhite,8%);
+    dt,dd{
+      display: inline-block;
+    }
   }
   @include e(link) {
     @include font-size(16);
@@ -49,7 +53,7 @@
         bottom: 0.7rem;
       }
       &:last-child {
-        margin-bottom: 6rem;
+        margin-bottom: 15vh;
       }
     }
   }

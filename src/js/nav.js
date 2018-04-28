@@ -1,4 +1,4 @@
-var navModule = (function () {
+const navModule = (function () {
 
     // DOM Cache
     var nav = document.querySelector('.nav'),
@@ -7,7 +7,7 @@ var navModule = (function () {
     // Methods
     var checkScrollPosition = function () {
         var scrollPos = window.scrollY;
-        if (scrollPos > 100) {
+        if (scrollPos > 80) {
             addScrollClass();
         } else {
             removeScrollClass();

@@ -903,12 +903,12 @@ var scrollRevealConfig = (function () {
     });
     initReveal('.about__header', {
         duration: 1000,
-        origin: 'left',
+        origin: 'right',
         distance: '50vw',
     });
     initReveal('.about__desc', {
         duration: 1000,
-        origin: 'left',
+        origin: 'right',
         distance: '50vw',
     });
     initReveal('.benefit', {
