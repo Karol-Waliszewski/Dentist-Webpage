@@ -3,6 +3,7 @@
     padding-bottom: convertPixels(80, 768, 1vh);
     background: $darkblue;
     color: #fff;
+      overflow-x: hidden;
     @include e(header) {
         margin: {
             top: convertREM(66);
