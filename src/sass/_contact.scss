@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
   @include m(main) {
     $contactHeight: convertPixels(500, 768, 1vh);
     min-height: $contactHeight;
@@ -13,6 +14,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+
     @include responsive('tablet', max) {
       position: static;
       width: 100%;
@@ -28,12 +30,14 @@
       width: 270px;
       background: $darkblue;
       border: none;
+
       margin: {
         left: 0;
         top: 18px;
         bottom: 18px;
       }
-      @include responsive('phone-wide', max) {
+
+      @include responsive('tablet-wide', max) {
         margin: {
           left: auto;
           right: auto;
@@ -46,11 +50,13 @@
     .contact__details {
       background: #fff;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+
       @include responsive('tablet', min) {
         padding-left: 85px;
       }
-      @include responsive('phone-wide', max) {
-        padding::{
+
+      @include responsive('tablet', max) {
+        padding: {
           bottom: 5vh;
         }
       }
@@ -65,7 +71,10 @@
       min-height: convertPixels(170, 768, 1vh);
       padding-bottom: 5px;
       margin-bottom: 20px;
+
       @include responsive('tablet', max) {
+        align-items: center;
+
         padding: {
           top: 5vh;
         }
@@ -75,10 +84,12 @@
     .contact__title {
       @include font-size(66);
       font-weight: 600;
+
       @include m(above) {
         @include font-size(40);
       }
-      @include responsive('phone-wide', max) {
+
+      @include responsive('tablet-wide', max) {
         margin-left: auto;
         margin-right: auto;
       }
@@ -93,12 +104,14 @@
       @include font-size(22);
       text-decoration: none;
       color: $black;
+
       margin: {
         top: convertREM(11);
         bottom: convertREM(11);
       }
     }
   }
+
   @include m(footer) {
     height: 100%;
     flex-direction: column;
@@ -109,6 +122,7 @@
         margin: 0.7rem 0;
         @include font-size(30);
       }
+
       @include m(secondary) {
         margin: 0.5rem 0;
         @include font-size(24);
@@ -127,6 +141,7 @@
       @include font-size(20);
       font-weight: 300;
       color: lighten($gray, 20%);
+
       @include m(inline) {
         @extend .contact__info;
         display: inline-flex;

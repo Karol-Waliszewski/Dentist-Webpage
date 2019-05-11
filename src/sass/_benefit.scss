@@ -1,40 +1,56 @@
 .benefit {
     height: convertPixels(300, 768, 1vh);
     position: relative;
+
     @include responsive('tablet-wide', max) {
         margin: {
             top: 1rem;
             bottom: 1rem;
         }
     }
+
     background: #fff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+
     @include e(header) {
         height: convertPixels(120, 768, 1vh);
     }
+
     @include e(name) {
         text-align: left;
         @include font-size(20);
         font-weight: 500;
         word-wrap: break-word;
     }
+
     @include e(content) {
         height: convertPixels(180, 768, 1vh);
         overflow: hidden;
     }
+
     @include e(desc) {
         line-height: 1.35;
         text-align: left;
         @include font-size(16);
         font-weight: 400;
     }
+
     @include e(icon) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        height: auto;
-        @include responsive('phone-wide', max) {
-            height: 90px;
+        height: 100%;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-height: 90%;
+            max-width: 100%;
         }
+
     }
+
     &::after {
         content: '';
         display: block;

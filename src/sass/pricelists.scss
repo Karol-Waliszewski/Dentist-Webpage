@@ -12,8 +12,7 @@ $dirtwhite: #F0F5F9;
 }
 
 // --------- //
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin-ext');
 @import 'mixins';
 @import 'reset';
 @import 'flexboxgrid';
@@ -27,7 +26,8 @@ $dirtwhite: #F0F5F9;
 @import 'fa/font-awesome';
 body {
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 .row {

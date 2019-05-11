@@ -93,7 +93,7 @@ $mixins-breakpoints: ( "phone": 400px, "phone-wide": 480px, "phablet": 560px, "t
 }
 
 @mixin font-size($size, $base: 16, $unit: 1rem) {
-    font-size: $size; // fallback for old browsers
+    font-size: $size * 1px; // fallback for old browsers
     font-size: ($size / $base) * $unit;
 }
 

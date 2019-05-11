@@ -7,7 +7,6 @@
     @include e(number) {
         @include font-size(70);
         word-wrap: break-word;
-        font-family: 'Roboto', sans-serif;
 
     }
     @include e(name) {
